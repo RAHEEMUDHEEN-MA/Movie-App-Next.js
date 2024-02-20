@@ -33,9 +33,7 @@ const SideBar = () => {
   //     setselectedGenre(searchParams.get("genre")?.toString()!);
   //     return;
   //   }
-  //   setselectedGenre(params.id.toString())
 
-  // }, []);
 
   useEffect(() => {
     if (searchParams.get("genre")) {
