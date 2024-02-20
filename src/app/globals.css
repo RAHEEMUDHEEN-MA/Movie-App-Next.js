@@ -18,4 +18,10 @@
         {
             @apply font-semibold text-[25px]
         }
+        .sideBarLink{
+            @apply text-textColour ml-4 cursor-pointer hover:text-white transition w-fit
+        }
+        .sideBarActive{
+            @apply text-white
+        }
     }
