@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar/>
         <div className="grid bg-gray-900 grid-cols-1 sm:grid-cols-[300px,1fr]">
-          {/* <SideBar/> */}
+          <SideBar/>
           {children}
         </div>
         </body>

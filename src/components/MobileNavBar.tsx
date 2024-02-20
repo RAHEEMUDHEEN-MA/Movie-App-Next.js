@@ -3,10 +3,8 @@ import { BASE_URL } from "@/utils/Const";
 import axios from "axios";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
-import { env } from "process";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { BiSearchAlt } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 
 interface propsType {
@@ -27,6 +25,7 @@ const MobileNavBar = ({ input, setinput, handleSubmit }: propsType) => {
   const [selectedGenre, setselectedGenre] = useState("");
   const searchParams = useSearchParams();
   const params = useParams();
+  console.log("params:",params)
   // console.log("api key", process.env.NEXT_PUBLIC_API_KEY);
   useEffect(() => {
     axios
