@@ -15,7 +15,7 @@ export interface MovieType {
   title: string;
   release_date: string;
 }
-const page = () => {
+const Discover = () => {
   const [title, settitle] = useState("");
   const [movies, setmovies] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
@@ -136,4 +136,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Discover;

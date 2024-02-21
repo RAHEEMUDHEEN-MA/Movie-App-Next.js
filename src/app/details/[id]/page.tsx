@@ -2,6 +2,7 @@
 import Footer from "@/components/Footer";
 import { BASE_IMG_URL, BASE_URL } from "@/utils/Const";
 import axios from "axios";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -58,12 +59,12 @@ const Deatails = () => {
         setTrailer(theTrailer);
       })
       .catch((err) => console.log(err));
-  }, [params.id]);
+  }, [params.id,id]);
 
   return (
     <div className="h-[100vh] ">
       <div className=" flex flex-row p-4">
-        <img
+        <Image
           className="max-w-[20%] min-w-[300px]"
           src={`${BASE_IMG_URL}/${movieDetails?.poster_path}`}
           alt=" movie poster image"
