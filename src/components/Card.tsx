@@ -21,8 +21,8 @@ const Card = ({
   return (
     <div className="group bg-primary h-[450px] md:h-[335px] w-[100%]">
       {!loading && !error && <CardSkeleton/>}
-   <CardSkeleton  />
-      {/* {error && <CardSkeleton error />} */}
+ 
+      {error && <CardSkeleton error />}
 
       <Link
         className={`${!loading && error && "hidden"}`}

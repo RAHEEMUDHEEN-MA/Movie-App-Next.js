@@ -34,6 +34,9 @@
     background-color: red;
     animation: shine 0.7s linear infinite;
   }
+  .MovieTitle{
+    @apply font-semibold text-[35px];
+  }
 }
 @keyframes shine {
   0% {
