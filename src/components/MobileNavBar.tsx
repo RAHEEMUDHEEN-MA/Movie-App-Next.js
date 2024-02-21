@@ -25,7 +25,7 @@ const MobileNavBar = ({ input, setinput, handleSubmit }: propsType) => {
   const [selectedGenre, setselectedGenre] = useState("");
   const searchParams = useSearchParams();
   const params = useParams();
-  console.log("params:",params)
+  // console.log("params:",params)
   // console.log("api key", process.env.NEXT_PUBLIC_API_KEY);
   useEffect(() => {
     axios
@@ -46,7 +46,7 @@ const MobileNavBar = ({ input, setinput, handleSubmit }: propsType) => {
       setselectedGenre(searchParams.get("genre")!);
       return;
     }
-    setselectedGenre(params.id.toString());
+    setselectedGenre(params.id?.toString());
   }, [searchParams.get("genre"), params.id]);
 
   return (

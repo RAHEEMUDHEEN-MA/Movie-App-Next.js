@@ -5,7 +5,8 @@ import React, { useState } from "react";
 import MobileNavBar from "./MobileNavBar";
 
 const Navbar = () => {
-  const [input, setinput] = useState<string>("");
+  const [input, setinput] = useState("");
+  
   const router = useRouter();
 
   const handleSubmit = (event: React.FormEvent) => {

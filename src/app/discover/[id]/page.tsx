@@ -1,9 +1,10 @@
 "use client";
 import Card from "@/components/Card";
+import Footer from "@/components/Footer";
 import LoadingPage from "@/components/LoadingPage";
 import { BASE_URL } from "@/utils/Const";
 import axios from "axios";
-import { log } from "console";
+
 import { useParams, useSearchParams, useRouter } from "next/navigation";
 // import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
@@ -34,6 +35,7 @@ const page = () => {
     });
 
     const id = params.id.toString();
+    console.log("id :",id)
     const page = searchParams.get("page");
 
     setdiscover(id);
@@ -64,7 +66,7 @@ const page = () => {
         },
       })
       .then((response) => {
-        console.log("response :", response.data.results);
+        console.log("discover wise response :", response.data.results);
 
         setmovies(response.data.results);
         setcurrentPage(response.data.page);
@@ -80,7 +82,7 @@ const page = () => {
     } else {
       page = `page=${currentPage + 1}`;
     }
-    router.push(`/discover/${discover}${page}`);
+    router.push(`/discover/${discover}?${page}`);
   };
 
   return (
@@ -103,6 +105,33 @@ const page = () => {
           />
         ))}
       </div>
+
+      {/* butons -------------*/}
+      <div className="flex justify-center gap-16 py-6 pt-16">
+        <button
+          onClick={() => {
+            PageNavigation("prev");
+          }}
+          className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            currentPage === 1 && "hidden"
+          }`}
+        >
+          Back
+        </button>
+
+        <button
+          onClick={() => {
+            PageNavigation("next");
+          }}
+          className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            currentPage === totalPage && "hidden"
+          }`}
+        >
+          Next
+        </button>
+       
+      </div>
+      <Footer/>
     </main>
   );
 };

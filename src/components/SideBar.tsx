@@ -23,7 +23,7 @@ const SideBar = () => {
       )
       .then(({ data }) => {
         setgenres(data.genres);
-        console.log("api data", data.genres);
+        // console.log("api data", data.genres);
       })
       .catch((err) => console.log(err));
   }, []);
