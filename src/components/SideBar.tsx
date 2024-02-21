@@ -28,14 +28,7 @@ const SideBar = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect(() => {
-  //   if (searchParams.get("genre")) {
-  //     setselectedGenre(searchParams.get("genre")?.toString()!);
-  //     return;
-  //   }
-  //   setselectedGenre(params.id.toString())
 
-  // }, []);
 
   useEffect(() => {
     if (searchParams.get("genre")) {

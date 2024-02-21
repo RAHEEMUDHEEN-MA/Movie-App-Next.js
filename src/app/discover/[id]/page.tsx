@@ -92,12 +92,12 @@ const page = () => {
       <h2 className="text-[24px] tracking-[2px]">{title}</h2>
       {movies.length === 0 && <LoadingPage />}
 
-      <div className="MovieGrid grid gap-8 place-items-center mt-8">
+      <div className="moviesGrid grid gap-8 place-items-center mt-8">
         {movies.map((data: MovieType) => (
           <Card
             key={data.id}
             MoviePosterIMG={data.poster_path}
-            movieID={data.id}
+            MovieID={data.id}
             MovieTitle={data.title}
             releaseDate={data.release_date}
           />
