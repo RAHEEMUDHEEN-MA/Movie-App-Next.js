@@ -10,19 +10,16 @@ interface prpsType {
   releaseDate: string;
 }
 
-const Card = ({
-  MovieID,
-  MovieTitle,
-  MoviePosterIMG,
-  releaseDate,
-}: prpsType) => {
-  const [loading, setLoading] = useState(false);
-  const [error, seterror] = useState(false);
+const Card = ({movieID,MovieTitle,MoviePosterIMG,releaseDate}:prpsType) => {
+
+ const[loading,setLoading]=useState(false)
+ const [error, seterror] = useState(false)
   return (
-    <div className="group bg-primary h-[450px] md:h-[335px] w-[100%]">
-      {!loading && !error && <CardSkeleton/>}
-   {/* <CardSkeleton  /> */}
-      {error && <CardSkeleton error />}
+    <div>
+        Card
+    </div>
+  )
+}
 
       <Link
         className={`${!loading && error && "hidden"}`}

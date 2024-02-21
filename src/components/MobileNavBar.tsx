@@ -21,11 +21,11 @@ interface genreType {
 const MobileNavBar = ({ input, setinput, handleSubmit }: propsType) => {
   const [isOpen, setisOpen] = useState(false);
   const [genres, setgenres] = useState([]);
-  // console.log("dataa", genres);
+  
   const [selectedGenre, setselectedGenre] = useState("");
   const searchParams = useSearchParams();
   const params = useParams();
-  // console.log("params:",params)
+  console.log("params:",params)
   // console.log("api key", process.env.NEXT_PUBLIC_API_KEY);
   useEffect(() => {
     axios
@@ -33,7 +33,7 @@ const MobileNavBar = ({ input, setinput, handleSubmit }: propsType) => {
         `${BASE_URL}/genre/movie/list?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`
       )
       .then(({ data }) => {
-        // console.log("data",data.genres)
+        
         setgenres(data.genres);
       })
       .catch((err) => {
