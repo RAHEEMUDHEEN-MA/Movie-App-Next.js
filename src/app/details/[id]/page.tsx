@@ -18,7 +18,7 @@ const Deatails = () => {
     key: string;
     poster_path: string;
     title: string;
-    overview:string
+    overview: string;
   }
 
   const [movieDetails, setmovieDetails] = useState<movie>();
@@ -59,7 +59,7 @@ const Deatails = () => {
         setTrailer(theTrailer);
       })
       .catch((err) => console.log(err));
-  }, [params.id,id]);
+  }, [params.id, id]);
 
   return (
     <div className="h-[100vh] ">
@@ -67,21 +67,23 @@ const Deatails = () => {
         <Image
           className="max-w-[20%] min-w-[300px]"
           src={`${BASE_IMG_URL}/${movieDetails?.poster_path}`}
-          alt=" movie poster image"
+          alt="movie poster image"
+          width={300} // Set the width based on your design
+          height={450} // Set the height based on your design
         />
         <div className=" px-4 text-left">
           <h1 className="MovieTitle">{movieDetails?.title.toUpperCase()}</h1>
           <p>{movieDetails?.overview}</p>
+
+       {trailer?   <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${trailer?.key}?autoplay=1`}
+            title="YouTube video player"
+            allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>:<div></div>}
         </div>
       </div>
-
-      {/* <iframe
-    width="560"
-    height="315"
-    src={`https://www.youtube.com/embed/${trailer?.key}?autoplay=1`}
-    title="YouTube video player"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-></iframe> */}
 
       <Footer />
     </div>

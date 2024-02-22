@@ -93,7 +93,7 @@ const Search = () => {
             onClick={() => {
               PageNavigation("prev");
             }}
-            className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            className={`bg-purple-800 p-2 rounded-md px-8 hover:bg-purple-900 ${
               currentPage === 1 && "hidden"
             }`}
           >
@@ -104,7 +104,7 @@ const Search = () => {
             onClick={() => {
               PageNavigation("next");
             }}
-            className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            className={`bg-purple-800 p-2 px-8 rounded-md hover:bg-purple-900 ${
               currentPage === totalPage && "hidden"
             }`}
           >

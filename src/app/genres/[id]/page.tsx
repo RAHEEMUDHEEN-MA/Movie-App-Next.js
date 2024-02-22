@@ -52,7 +52,7 @@ const Genres = () => {
           settotalPage(response.data.total_page);
         })
         .catch((err) => console.log(err));
-    }, [params.id, searchParams.get("page")]);
+    }, [params.id, searchParams]);
   
     const PageNavigation = (button: string) => {
       let page = "";
@@ -91,7 +91,7 @@ const Genres = () => {
             onClick={() => {
               PageNavigation("prev");
             }}
-            className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            className={`bg-purple-800 p-2 px-8 rounded-md hover:bg-purple-900 ${
               currentPage === 1 && "hidden"
             }`}
           >
@@ -102,7 +102,7 @@ const Genres = () => {
             onClick={() => {
               PageNavigation("next");
             }}
-            className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+            className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 rounded-md ${
               currentPage === totalPage && "hidden"
             }`}
           >

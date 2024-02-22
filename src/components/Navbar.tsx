@@ -24,13 +24,14 @@ const Navbar = () => {
         <form className="space-x-4 hidden md:block" onSubmit={handleSubmit}>
           <input
             aria-label="search"
-            className="bg-secondary px-4 py-2 outline-none placeholder:text-textColour"
+            className="bg-secondary px-4 py-2 outline-none w-56 rounded-sm placeholder:text-textColour"
             type="text"
             value={input}
             onChange={(e) => setinput(e.target.value)}
             placeholder="Search Movie"
           />
-          <button className="bg-secondary text-textColour py-2 px-4 hover:bg-textColour hover:text-white">
+          <button className="bg-purple-800 text-white py-2 px-4 rounded-sm hover:bg-purple-700  hover:text-white">
+          
             search
           </button>
         </form>

@@ -33,11 +33,11 @@ const Discover = () => {
       left: 0,
       behavior: "smooth",
     });
-
+  
     const id = params.id.toString();
-    console.log("id :",id)
+    console.log("id :", id);
     const page = searchParams.get("page");
-
+  
     setdiscover(id);
     switch (id) {
       case "now_playing":
@@ -52,12 +52,12 @@ const Discover = () => {
       case "upcoming":
         settitle(" Upcoming Movies");
         break;
-
+  
       default:
         settitle("");
         break;
     }
-
+  
     axios
       .get(`${BASE_URL}/movie/${id}`, {
         params: {
@@ -67,13 +67,13 @@ const Discover = () => {
       })
       .then((response) => {
         console.log("discover wise response :", response.data.results);
-
+  
         setmovies(response.data.results);
         setcurrentPage(response.data.page);
         settotalPage(response.data.total_page);
       })
       .catch((err) => console.log(err));
-  }, [params.id, searchParams.get("page")]);
+  }, [params.id, searchParams]);
 
   const PageNavigation = (button: string) => {
     let page = "";
@@ -112,7 +112,7 @@ const Discover = () => {
           onClick={() => {
             PageNavigation("prev");
           }}
-          className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+          className={`bg-purple-800 p-2 rounded-md px-8 hover:bg-purple-900 ${
             currentPage === 1 && "hidden"
           }`}
         >
@@ -123,7 +123,7 @@ const Discover = () => {
           onClick={() => {
             PageNavigation("next");
           }}
-          className={`bg-purple-800 p-2 px-8 hover:bg-purple-900 ${
+          className={`bg-purple-800 p-2 px-8 rounded-md hover:bg-purple-900 ${
             currentPage === totalPage && "hidden"
           }`}
         >
