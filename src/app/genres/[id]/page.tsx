@@ -12,7 +12,6 @@ import React, { useEffect, useRef, useState } from 'react'
 const Genres = () => {
     const [title, settitle] = useState("");
     const [movies, setmovies] = useState([]);
-    // console.log("movies from api",movies)
     const [currentPage, setcurrentPage] = useState(1);
     const [totalPage, settotalPage] = useState(1);
     const HomePageRef = useRef<HTMLDivElement>(null);
@@ -32,10 +31,7 @@ const Genres = () => {
       console.log("genre id:",id)
       const page = searchParams.get("page");
       const genre=searchParams.get("genre")
-
       settitle(`${genre} Movies`);
-    
-      
       axios
         .get(`${BASE_URL}/discover/movie`, {
           params: {
@@ -84,7 +80,6 @@ const Genres = () => {
             />
           ))}
         </div>
-  
         {/* butons -------------*/}
         <div className="flex justify-center gap-16 py-6 pt-16">
           <button
