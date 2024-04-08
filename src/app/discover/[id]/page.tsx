@@ -6,7 +6,6 @@ import { BASE_URL } from "@/utils/Const";
 import axios from "axios";
 
 import { useParams, useSearchParams, useRouter } from "next/navigation";
-// import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
 export interface MovieType {
